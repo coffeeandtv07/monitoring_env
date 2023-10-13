@@ -51,6 +51,14 @@ Make sure that ports 3000, 9100, 9090 are allowed in your firewall.
 The prometheus.yml config specifies the scrape interval and job names that should be scraped. Apart from the Prometheus and Node Exporter, no other custom jobs are included into the config.
 Jobs like 'cpu' and 'memory' are included into Prometheus by default.
 
+3. Start the monitoring environment:
+
+        sudo docker-compose up -d
+
+This command will pull the necessary Docker images and start the services. The following commands stops the Docker container:
+
+        sudo docker-compose down
+        
 ### Usage
 
 Grafana: 
