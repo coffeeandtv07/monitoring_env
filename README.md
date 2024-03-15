@@ -24,15 +24,17 @@ sudo apt-get update
 
 # Install the latest Docker Engine and Docker Compose versions:
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-# Verify that the Docker Engine installation is successful by running the hello-world image:
-sudo docker run hello-world
-
-# Verify that Docker Compose is installed and working: 
-sudo docker compose version
 ```
 
-You may also need to add your user to the `docker` group upon installing Docker. The steps for this process are described in [Linux post-installation steps for Docker Engine](https://docs.docker.com/engine/install/linux-postinstall/).
+You may also need to add your user to the `docker` group, once the installion is complete, to run the `docker` commands without `sudo` privilege escalation. The steps for this process are described in [Linux post-installation steps for Docker Engine](https://docs.docker.com/engine/install/linux-postinstall/). Once done, verify that the Docker Engine installation is successful by running the `hello-world` image:
+```bash
+docker run hello-world
+```
+
+Verify that Docker Compose is installed and working: 
+```bash
+docker compose version
+```
 
 ### Installation
 
@@ -57,12 +59,12 @@ Jobs like 'cpu' and 'memory' are included into Prometheus by default.
 
 3. Start the monitoring environment:
 ```bash
-sudo docker compose up -d
+docker compose up -d
 ```
 
 This command will pull the necessary Docker images and start the services. The following commands stops the Docker container:
 ```bash
-sudo docker compose down
+docker compose down
 ```
 
 ### Usage
